@@ -3,7 +3,7 @@ import Header from "./Components/Header"
 import Form from "./Components/Form"
 import Weather from "./Components/Weather"
 import Location from "./Components/Location"
-import { async } from "q";
+
 
 
 const API_KEY = "4c4d8bbea8dfac06bebcb6b2cded1401"
@@ -36,13 +36,14 @@ class App extends React.Component{
     if (city && country) {
       console.log(data);
       this.setState({
-        day: [data.list[0].dt_txt,data.list[8].dt_txt,data.list[16].dt_txt,data.list[24].dt_txt,data.list[32].dt_txt],
+        //day: [data.list[0].dt_txt,data.list[7].dt_txt,data.list[15].dt_txt,data.list[23].dt_txt,data.list[31].dt_txt],
+        day: ['Today','Tomorrow',this.getDay(data.list[15].dt_txt),this.getDay(data.list[23].dt_txt),this.getDay(data.list[31].dt_txt)],
         city: data.city.name,
         country: data.city.country,
-        max_temp: [data.list[0].main.temp_max,data.list[8].main.temp_max,data.list[16].main.temp_max,data.list[24].main.temp_max,data.list[32].main.temp_max],
-        min_temp: [data.list[0].main.temp_min,data.list[8].main.temp_min,data.list[16].main.temp_min,data.list[24].main.temp_min,data.list[32].main.temp_min],
-        condition: [data.list[0].weather[0].description,data.list[8].weather[0].description,data.list[16].weather[0].description,data.list[24].weather[0].description,data.list[32].weather[0].description],
-        humidity: [data.list[0].main.humidity,data.list[8].main.humidity,data.list[16].main.humidity,data.list[24].main.humidity,data.list[32].main.humidity],
+        max_temp: [data.list[0].main.temp_max,data.list[7].main.temp_max,data.list[15].main.temp_max,data.list[23].main.temp_max,data.list[31].main.temp_max],
+        min_temp: [data.list[0].main.temp_min,data.list[7].main.temp_min,data.list[15].main.temp_min,data.list[23].main.temp_min,data.list[31].main.temp_min],
+        condition: [data.list[0].weather[0].description,data.list[7].weather[0].description,data.list[15].weather[0].description,data.list[23].weather[0].description,data.list[31].weather[0].description],
+        humidity: [data.list[0].main.humidity,data.list[7].main.humidity,data.list[15].main.humidity,data.list[23].main.humidity,data.list[31].main.humidity],
         error: ""
       }) 
     } else {
@@ -58,6 +59,11 @@ class App extends React.Component{
       }) 
     }
   }
+  getDay = (myDate) => {
+    const date = new Date(myDate);
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    return days[date.getDay()];
+  }
  
   render(){
     return(
@@ -69,7 +75,7 @@ class App extends React.Component{
             country={this.state.country}
         />
         <div className="forecast">
-        <Weather getDay = {this.getDay}
+        <Weather 
             day= {this.state.day[0]}
             city={this.state.city}
             country={this.state.country}

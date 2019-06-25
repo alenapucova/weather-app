@@ -5,6 +5,7 @@ class Header extends React.Component{
         return(
             <div>
                 <h1>Weather App</h1>
+                <p className="title">Find out the weather of your location...</p>
             </div>
         )
     }
