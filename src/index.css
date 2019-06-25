@@ -14,7 +14,7 @@ code {
 }
 
 .wrapper{
-  width: 50%;
+  width: 80%;
   margin: 100px auto;
   padding: 20px;
   background-color: lightgray;
@@ -36,5 +36,18 @@ input{
 .search-button{
   height: 30px;
   width: 100px;
+  
+}
+.location{
+  text-align: center;
+  font-size: 20px;
+}
+.single_day{
+  display: inline-block;
+  padding: 15px;
+}
+.forecast{
+  width: 85%;
+  margin:auto;
   
 }
