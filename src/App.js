@@ -16,19 +16,25 @@ class App extends React.Component {
     min_temp: [],
     condition: [],
     humidity: [],
-    error: undefined
+    error: undefined,
+    loading:undefined
   }
   getWeather = async (e) => {
 
     e.preventDefault();
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
-
+    
+    this.setState({
+      loading: true
+    })
 
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}&units=metric`);
     const data = await api_call.json();
 
-
+    this.setState({
+      loading: false
+    })
 
     if (city && country) {
       console.log(data);
@@ -58,10 +64,10 @@ class App extends React.Component {
 
   render() {
     return (
-
+      
       <div className="wrapper">
-
-        <Header />
+        <p className="loadingBtn">{this.state.loading && "Loading..."}</p>
+        <Header  />
         <Form getWeather={this.getWeather} />
         <Location
           city={this.state.city}
