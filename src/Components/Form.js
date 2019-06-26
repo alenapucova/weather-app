@@ -7,7 +7,7 @@ class Form extends React.Component{
             <form className="wrap-input" onSubmit={this.props.getWeather}>
                 <input type="text" name="city" placeholder="City..."/>
                 <input type="text" name="country" placeholder="Country..."/>
-                <button className="search-button">Search</button>
+                <button className="search-button">Get weather</button>
             </form>
         )
     }

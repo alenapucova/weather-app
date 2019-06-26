@@ -16,7 +16,7 @@ code {
 .wrapper{
   width: 80%;
   margin: 100px auto;
-  padding: 20px;
+  padding: 20px 0px;
   background-color: rgb(221, 221, 221);
   opacity: 0.9;
   border-radius: 10px;
@@ -31,6 +31,7 @@ h1{
   padding-bottom: 20px;
 
 }
+
 input{
   margin: 0 10px;
   height: 30px;
@@ -67,12 +68,12 @@ input[type=text]{
 .single_day{
   display: inline-block;
   margin: 10px;
-  padding: 5px;
+  padding: 10px;
   
   text-align: center;
 }
 .forecast{
-  width: 85%;
+  width: 90%;
   margin: auto auto 30px auto;
 
   
