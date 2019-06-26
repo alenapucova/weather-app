@@ -1,3 +1,17 @@
+Set up
+
+git clone https://github.com/alenapucova/weather-app.git
+cd weather-app
+yarn # or npm install
+yarn start # or npm run start
+Then open up your browser to http://localhost:3000/, and you will be able to see the project.
+
+
+API_KEY = "4c4d8bbea8dfac06bebcb6b2cded1401"
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
