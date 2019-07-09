@@ -50,7 +50,7 @@ input[type=text]{
 }
 .search-button{
   height: 35px;
-  width: 100px;
+  width: 130px;
   border-radius: 5px;
   background-color: #fff;
   
@@ -63,20 +63,34 @@ input[type=text]{
 .location{
   text-align: center;
   font-size: 30px;
+  margin-top: 20px;
   
 }
-.single_day{
-  display: inline-block;
-  margin: 10px;
-  padding: 10px;
+.singleDay{
   
+  margin: 0 10px;
+  padding: 0  10px;
+  height: auto;
   text-align: center;
 }
 .forecast{
+  display: flex;
   width: 90%;
   margin: auto auto 30px auto;
 }
 .loadingBtn{
   text-align: center;
   
+}
+#demo1,#demo2,#demo3,#demo4,#demo5 {
+  width: 104px;
+  text-align: center;
+  padding: 15px 0;
+  margin: auto;
+}
+[data-toggle="collapse"].collapsed .hideDetails {
+  display: none;
+}
+[data-toggle="collapse"]:not(.collapsed) .seeDetails {
+  display: none;
 }
