@@ -74,9 +74,10 @@ input[type=text]{
   text-align: center;
 }
 .forecast{
-  display: flex;
-  width: 90%;
-  margin: auto auto 30px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 0 45px;
+  margin: 50px auto;
 }
 .loadingBtn{
   text-align: center;
