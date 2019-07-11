@@ -17,7 +17,6 @@ class App extends React.Component {
     condition: [],
     humidity: [],
     details: [],
-    error: undefined,
     loading:undefined,
   }
   getWeather = async (e) => {
@@ -36,6 +35,7 @@ class App extends React.Component {
     this.setState({
       loading: false
     })
+    
     //separating array into 5 single days
     var todaySlices = this.getNumberOfTodaySlices(data);
     var slicesPerDay = 8;
@@ -46,27 +46,18 @@ class App extends React.Component {
     var day4 = data.list.slice(todaySlices + slicesPerDay * 2, todaySlices + slicesPerDay * 3);
     var day5 = data.list.slice(todaySlices + slicesPerDay * 3, todaySlices + slicesPerDay * 4);
     
-    if (city && country) {
-      console.log(data);
-      this.setState({
-        city: data.city.name,
-        country: data.city.country,
-        day: ['Today', 'Tomorrow', this.getDay(data.list[15].dt_txt), this.getDay(data.list[23].dt_txt), this.getDay(data.list[31].dt_txt)],
-        max_temp: [this.getMaxTemperature(day1),this.getMaxTemperature(day2),this.getMaxTemperature(day3),this.getMaxTemperature(day4),this.getMaxTemperature(day5)],
-        min_temp: [this.getMinTemperature(day1),this.getMinTemperature(day2),this.getMinTemperature(day3),this.getMinTemperature(day4),this.getMinTemperature(day5)],
-        condition: [data.list[0].weather[0].description, data.list[7].weather[0].description, data.list[15].weather[0].description, data.list[23].weather[0].description, data.list[31].weather[0].description],
-        humidity: [data.list[0].main.humidity, data.list[7].main.humidity, data.list[15].main.humidity, data.list[23].main.humidity, data.list[31].main.humidity],
-        details:  [this.getDetails(day1),this.getDetails(day2),this.getDetails(day3),this.getDetails(day4),this.getDetails(day5)],
-        error: "",
-      })      
-      console.log(this.state.max_temp)
-    } else {
-      this.setState({
-        city: undefined,
-        country: undefined,
-        error: "Please enter the location"
-      })
-    }
+  
+    console.log(data);
+    this.setState({
+      city: data.city.name,
+      country: data.city.country,
+      day: ['Today', 'Tomorrow', this.getDay(data.list[15].dt_txt), this.getDay(data.list[23].dt_txt), this.getDay(data.list[31].dt_txt)],
+      max_temp: [this.getMaxTemperature(day1),this.getMaxTemperature(day2),this.getMaxTemperature(day3),this.getMaxTemperature(day4),this.getMaxTemperature(day5)],
+      min_temp: [this.getMinTemperature(day1),this.getMinTemperature(day2),this.getMinTemperature(day3),this.getMinTemperature(day4),this.getMinTemperature(day5)],
+      condition: [data.list[0].weather[0].description, data.list[7].weather[0].description, data.list[15].weather[0].description, data.list[23].weather[0].description, data.list[31].weather[0].description],
+      humidity: [data.list[0].main.humidity, data.list[7].main.humidity, data.list[15].main.humidity, data.list[23].main.humidity, data.list[31].main.humidity],
+      details:  [this.getDetails(day1),this.getDetails(day2),this.getDetails(day3),this.getDetails(day4),this.getDetails(day5)],
+      })  
   }
   getNumberOfTodaySlices = (data) => {
     
@@ -139,9 +130,6 @@ class App extends React.Component {
         <Location
           city={this.state.city}
           country={this.state.country}
-        />
-        <Weather
-          error={this.state.error}
         />
         <div className="forecast">
           <Weather 

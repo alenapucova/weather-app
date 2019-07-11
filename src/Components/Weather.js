@@ -15,7 +15,6 @@ class Weather extends React.Component {
                 {this.props.min_temp && <p>Min temperature: {this.props.min_temp}°C</p>}
                 {this.props.condition && <p>Condition: {this.props.condition}</p>}
                 {this.props.humidity && <p>Humidity: {this.props.humidity}</p>}
-                {this.props.error && <p>{alert("Please enter the location")}</p>}
                 {this.props.city && <button className={"btn btn-primary" + (this.props.id === 1 ? "" : " collapsed")} data-toggle="collapse" data-target={"#demo" + this.props.id}>
                     <span className="hideDetails">Hide details</span>
                     <span className="seeDetails">See details</span>
