@@ -36,7 +36,6 @@ input{
   margin: 0 10px;
   height: 30px;
   width: 15%;
-  
 }
 input[type=text]{
   color: black;
@@ -95,4 +94,68 @@ input[type=text]{
 }
 [data-toggle="collapse"]:not(.collapsed) .seeDetails {
   display: none;
+}
+@media only screen and (max-width: 700px) {
+  .wrapper{
+    width: 90%;
+    margin-top: 30px;
+  }
+  .forecast{
+    display: block;
+    margin-top: 30px;
+  }
+  .singleDay{
+    margin: 30px 0px;
+  }
+  input{
+    margin: 0 10px;
+    height: 30px;
+    width: 25%;
+  }
+} 
+@media only screen and (min-width: 700px){
+  .forecast{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+  }
+  .singleDay{
+    margin: 30px 0px;
+  }
+  input{
+    width: 25%;
+  }
+}
+@media only screen and (min-width: 1000px){
+  .forecast{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 30px;
+  }
+  .singleDay{
+    margin: 30px 0px;
+  }
+  input{
+    width: 15%;
+  }
+}
+@media only screen and (min-width: 1200px){
+  .forecast{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 30px;
+  }
+  .singleDay{
+    margin: 30px 0px;
+  }
+}
+@media only screen and (min-width: 1450px){
+  .forecast{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 30px;
+  }
+  .singleDay{
+    margin: 30px 0px;
+  }
 }

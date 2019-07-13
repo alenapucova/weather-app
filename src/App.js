@@ -17,6 +17,7 @@ class App extends React.Component {
     condition: [],
     humidity: [],
     details: [],
+    images:[],
     loading:undefined,
   }
   getWeather = async (e) => {
@@ -35,7 +36,7 @@ class App extends React.Component {
     this.setState({
       loading: false
     })
-    
+      
     //separating array into 5 single days
     var todaySlices = this.getNumberOfTodaySlices(data);
     var slicesPerDay = 8;
@@ -55,9 +56,13 @@ class App extends React.Component {
       max_temp: [this.getMaxTemperature(day1),this.getMaxTemperature(day2),this.getMaxTemperature(day3),this.getMaxTemperature(day4),this.getMaxTemperature(day5)],
       min_temp: [this.getMinTemperature(day1),this.getMinTemperature(day2),this.getMinTemperature(day3),this.getMinTemperature(day4),this.getMinTemperature(day5)],
       condition: [data.list[0].weather[0].description, data.list[7].weather[0].description, data.list[15].weather[0].description, data.list[23].weather[0].description, data.list[31].weather[0].description],
+      images: [`owf owf-${data.list[0].weather[0].id} owf-5x`,`owf owf-${data.list[7].weather[0].id} owf-5x`,`owf owf-${data.list[15].weather[0].id} owf-5x`,`owf owf-${data.list[23].weather[0].id} owf-5x`,`owf owf-${data.list[31].weather[0].id} owf-5x`],
       humidity: [data.list[0].main.humidity, data.list[7].main.humidity, data.list[15].main.humidity, data.list[23].main.humidity, data.list[31].main.humidity],
       details:  [this.getDetails(day1),this.getDetails(day2),this.getDetails(day3),this.getDetails(day4),this.getDetails(day5)],
-      })  
+    })  
+    
+      
+      
   }
   getNumberOfTodaySlices = (data) => {
     
@@ -69,8 +74,6 @@ class App extends React.Component {
       todayForecast++;
       today++;
     }
-    
-    console.log(todayForecast/3);
     return (todayForecast/3) +1 ;
   }
   
@@ -142,6 +145,7 @@ class App extends React.Component {
             condition={this.state.condition[0]}
             humidity={this.state.humidity[0]}
             details={this.state.details[0]}
+            images={this.state.images[0]}
           />
           <Weather 
             id={2}
@@ -153,6 +157,7 @@ class App extends React.Component {
             condition={this.state.condition[1]}
             humidity={this.state.humidity[1]}
             details={this.state.details[1]}
+            images={this.state.images[1]}
           />
           <Weather 
             id={3}
@@ -164,6 +169,7 @@ class App extends React.Component {
             condition={this.state.condition[2]}
             humidity={this.state.humidity[2]}
             details={this.state.details[2]}
+            images={this.state.images[2]}
           />
           <Weather 
             id={4}
@@ -175,6 +181,7 @@ class App extends React.Component {
             condition={this.state.condition[3]}
             humidity={this.state.humidity[3]}
             details={this.state.details[3]}
+            images={this.state.images[3]}
           />
           <Weather 
             id={5}
@@ -186,6 +193,7 @@ class App extends React.Component {
             condition={this.state.condition[4]}
             humidity={this.state.humidity[4]}
             details={this.state.details[4]}
+            images={this.state.images[4]}
           />
         </div>
       </div>

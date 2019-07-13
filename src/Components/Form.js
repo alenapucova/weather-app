@@ -1,5 +1,4 @@
 import React from "react"
-import useForm from "react-hook-form"
 
 class Form extends React.Component{
 
@@ -26,6 +25,7 @@ class Form extends React.Component{
         const city = localStorage.getItem('city');
         const country = localStorage.getItem('country');
         this.setState({city,country});
+
     }
 
     render(){
