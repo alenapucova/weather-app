@@ -83,11 +83,13 @@ input[type=text]{
   text-align: center;
   
 }
-#demo1,#demo2,#demo3,#demo4,#demo5 {
-  width: 104px;
+.details {
   text-align: center;
   padding: 15px 0;
   margin: auto;
+}
+.details span {
+  display: block;
 }
 [data-toggle="collapse"].collapsed .hideDetails {
   display: none;

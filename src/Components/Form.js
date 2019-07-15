@@ -25,7 +25,6 @@ class Form extends React.Component{
         const city = localStorage.getItem('city');
         const country = localStorage.getItem('country');
         this.setState({city,country});
-
     }
 
     render(){
