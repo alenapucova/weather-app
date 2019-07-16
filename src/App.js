@@ -47,7 +47,7 @@ class App extends React.Component {
       loading: false
     })
 
-    if (data.message == "city not found") {
+    if (data.message === "city not found") {
       alert("The location does not exist, try it again");
       localStorage.clear();
       this.setState({

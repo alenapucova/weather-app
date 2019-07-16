@@ -9,7 +9,6 @@ class Weather extends React.Component {
   
     getMinTemperature = (singleDay) => {
       var min = [];
-      console.warn(singleDay);
   
       for (var i = 0;i < singleDay.length;i++){
         min.push(singleDay[i].main.temp_min)
