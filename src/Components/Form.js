@@ -2,8 +2,8 @@ import React from "react"
 
 class Form extends React.Component{
 
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state = {
             city: "",
             country: ""

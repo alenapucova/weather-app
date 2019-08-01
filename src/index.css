@@ -45,6 +45,7 @@ input[type=text]{
 .wrap-input{
   width: 100%;
   margin: auto;
+  padding-bottom: 60px;
   text-align: center;
   
 }
@@ -63,7 +64,6 @@ input[type=text]{
 .location{
   text-align: center;
   font-size: 30px;
-  margin-top: 20px;
   
 }
 .singleDay{
